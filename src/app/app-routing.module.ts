@@ -8,8 +8,36 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'tabs/home',
     pathMatch: 'full'
+  },
+  {
+    path: '',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'orders',
+    loadChildren: () => import('./orders/orders.module').then( m => m.OrdersPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'notification',
+    loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)
+  },
+  {
+    path: 'order-details',
+    loadChildren: () => import('./order-details/order-details.module').then( m => m.OrderDetailsPageModule)
+  },
+  {
+    path: 'product-detail',
+    loadChildren: () => import('./product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
+  },
+  {
+    path: 'explore-products',
+    loadChildren: () => import('./explore-products/explore-products.module').then( m => m.ExploreProductsPageModule)
   },
 ];
 

@@ -1,0 +1,52 @@
+ion-toolbar {
+  ion-button {
+      margin: 0;
+      font-family: 'bold';
+  }
+  .back_btn {
+      font-size: 14px;
+  }
+}
+ion-content {
+  --background: #f3f3f3;
+}
+.main_content_div {
+
+  ion-label {
+      display: block;
+  }
+
+  .address_box {
+      background: white;
+      padding: 16px;
+      margin-bottom: 16px;
+
+      .date_lbl {
+          color: grey;
+          font-size: 14px;
+          text-align: end;
+      }
+
+      .simp_lbl {
+          font-size: 14px;
+      }
+  }
+}
+ion-card {
+  --background: white;
+  --color: #40a596;
+}
+
+ion-card-title {
+  --color: #055c4f;
+}
+
+ion-card-subtitle {
+  --color: #2e6e65;
+}
+
+/* iOS places the subtitle above the title */
+ion-card-header.ios {
+  display: flex;
+  flex-flow: column-reverse;
+}

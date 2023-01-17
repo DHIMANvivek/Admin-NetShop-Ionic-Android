@@ -1,0 +1,75 @@
+<ion-content>
+
+  <div class="main_content_div">
+
+      <div class="back_image" [style.backgroundImage]="'url(assets/14.jpg)'">
+          <div class="overlay_div">
+              <div class="icn_flex">
+                  <ion-icon name="bag" (click)="goToCart()"></ion-icon>
+              </div>
+              <div class="user_back" [style.backgroundImage]="'url(assets/7.png)'"></div>
+              <ion-label class="name_lbl">Hello, Admins</ion-label>
+              <ion-label class="white_lbl">Here is the Admin Options Page</ion-label>
+          </div>
+      </div>
+
+      <div class="content_div">
+
+          <div class="white_box" style="margin-top: -40px;">
+              <div class="item_div" (click)="goToAddresses()">
+                  <ion-icon name="location-sharp" class="first_icn"></ion-icon>
+                  <ion-label>My Address</ion-label>
+                  <ion-icon name="chevron-forward" class="last_icn"></ion-icon>
+              </div>
+              <div class="item_div" style="border: 0px;" (click)="goToAccount()">
+                  <ion-icon name="people" class="first_icn"></ion-icon>
+                  <ion-label>Account</ion-label>
+                  <ion-icon name="chevron-forward" class="last_icn"></ion-icon>
+              </div>
+          </div>
+
+          <div class="white_box">
+              <div class="item_div" (click)="goToReview()">
+                  <ion-icon name="star" class="first_icn"></ion-icon>
+                  <ion-label>Review</ion-label>
+                  <ion-icon name="chevron-forward" class="last_icn"></ion-icon>
+              </div>
+              <div class="item_div" (click)="goToProducts()">
+                  <ion-icon name="heart" class="first_icn"></ion-icon>
+                  <ion-label>Products</ion-label>
+                  <ion-icon name="chevron-forward" class="last_icn"></ion-icon>
+              </div>
+              <div class="item_div" (click)="goToNotification()">
+                  <ion-icon name="notifications" class="first_icn"></ion-icon>
+                  <ion-label>Notifications</ion-label>
+                  <ion-icon name="chevron-forward" class="last_icn"></ion-icon>
+              </div>
+              <!-- <div class="item_div">
+                  <ion-icon name="phone-portrait-outline" class="first_icn"></ion-icon>
+                  <ion-label>Devices</ion-label>
+                  <ion-icon name="chevron-forward" class="last_icn"></ion-icon>
+              </div> -->
+              <div class="item_div" (click)="goToPassword()">
+                  <ion-icon name="key" class="first_icn"></ion-icon>
+                  <ion-label>Passwords</ion-label>
+                  <ion-icon name="chevron-forward" class="last_icn"></ion-icon>
+              </div>
+              <div class="item_div" (click)="goToLanguages()">
+                  <ion-icon name="chatbox" class="first_icn"></ion-icon>
+                  <ion-label>Languages</ion-label>
+                  <ion-icon name="chevron-forward" class="last_icn"></ion-icon>
+              </div>
+              <!-- <div class="item_div" style="border: 0px;" (click)="authService.SignOut()">
+                  <ion-icon name="power" class="first_icn"></ion-icon>
+                  <ion-label>Logout</ion-label>
+                  <ion-icon name="chevron-forward" class="last_icn"></ion-icon>
+              </div> -->
+          </div>
+      </div>
+
+
+
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,123 @@
+.main_content_div {
+
+    ion-label {
+        display: block;
+    }
+    .back_image {
+        width: 100%;
+        height: 350px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .icn_flex {
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    .content_div {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background: white;
+        margin-top: -10px;
+        padding: 16px;
+
+        .name_flex {
+            display: flex;
+
+            .name_lbl {
+                font-size: 24px;
+                font-family: 'semi-bold';
+            }
+            .off_lbl {
+                color: grey;
+                text-decoration: line-through;
+                font-size: 14px;
+                white-space: nowrap;
+                margin-top: 10px;
+            }
+            .price_lbl {
+                font-family: 'semi-bold';
+                white-space: nowrap;
+            }
+        }
+
+        .rating_div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+
+            ion-icon {
+                color: orange;
+                margin-right: 3px;
+            }
+            ion-label {
+                margin-left: 16px;
+                color: grey;
+            }
+        }
+
+        .grey_title {
+            color: grey;
+            // font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .color_flex {
+            display: flex;
+            overflow: scroll;
+            padding-bottom: 10px;
+            
+            .color_div {
+                height: 40px;
+                width: 40px;
+                min-width: 40px;
+                border-radius: 100%;
+                margin-right: 16px;
+                position: relative;
+
+                ion-icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+            .color_div2 {
+                height: 40px;
+                width: 40px;
+                min-width: 40px;
+                border-radius: 100%;
+                margin-right: 16px;
+                background: #ECEBF1;
+                position: relative;
+                
+                ion-label {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    font-size: 14px;
+                }
+            }
+            .active {
+                border: 3px solid white;
+                box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+            }
+        }
+
+        ion-button {
+            margin: 0px;
+            margin-top: 20px;
+
+            ion-icon {
+                margin-right: 10px;
+                font-size: 18px;
+            }
+        }
+    }
+}

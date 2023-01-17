@@ -1,0 +1,45 @@
+<ion-content>
+    <div class="main_content_div"  *ngFor="let items of pname">
+      <!-- <img src='https://vivekdhiman.engineer/api/{{items.img}}'> -->
+        <div class="back_image" [style.backgroundImage]="'url(https://vivekdhiman.engineer/api/'+items.img+')'">
+            <div class="icn_flex">
+                <ion-icon name="chevron-back" style="font-size: 30px;" (click)="goToBack()"></ion-icon>
+            </div>
+        </div>
+        <div class="content_div" >
+          <ion-item>
+            <ion-label>Product ID</ion-label>
+            <ion-badge color="success">#{{items.id}}</ion-badge>
+          </ion-item>
+<br>
+            <div class="name_flex" >
+                <ion-label class="name_lbl"> {{items.names}}</ion-label>
+                <div style="margin-left: 25px;">
+                    <ion-label class="off_lbl">Rs 40000</ion-label>
+                    <ion-label class="price_lbl">Rs {{items.price}}</ion-label>
+                </div>
+            </div>
+
+            <div class="rating_div">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+                <ion-label>13 Reviews</ion-label>
+            </div>
+
+            <div class="rating_div">
+              <ion-label>{{items.descs}}</ion-label>
+            </div>
+<br><br>
+            <ion-button expand="block" shape="round" fill="outline" style="color: red;" (click)="deleteProduct(items.id)">
+                <ion-icon name="trash"></ion-icon>
+                Delete Product
+            </ion-button>
+
+        </div>
+
+
+    </div>
+</ion-content>

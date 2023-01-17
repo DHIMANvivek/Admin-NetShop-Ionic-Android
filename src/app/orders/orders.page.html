@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-button (click)="goBack()" fill="clear" size="small" class="back_btn">
+        <ion-icon slot="start" name="chevron-back"></ion-icon>
+        Back
+      </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: white;">
+  <div class="main_content_div" style="padding: 10px;">
+    <div *ngIf="orderList === 0">
+      <img style="margin-top: 30%;" src="assets/order_empty.png">
+    </div>
+
+    <div *ngIf="orderList != 0">
+      <ion-item>
+        <ion-label>Orders</ion-label>
+        <ion-badge color="success">{{orderLength}}</ion-badge>
+      </ion-item>
+<br>
+      <ion-card *ngFor="let item of orderList" (click)="goToOrderDetails(item.oid, item.payid)">
+        <ion-card-header>
+          <ion-row>
+            <ion-col size="8">
+              <ion-card-title>Order no : #{{item.oid}}</ion-card-title>
+              <ion-card-subtitle style="color: grey;">{{item.tp}} Products</ion-card-subtitle>
+            </ion-col>
+
+            <ion-col size="4">
+              <div style="color: black;">status:</div><ion-card-subtitle style="color: red;">{{item.status}}</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+        </ion-card-header>
+
+        <ion-card-content>
+            User: {{item.uid}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+
+  </div>
+</ion-content>

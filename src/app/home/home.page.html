@@ -6,15 +6,53 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="formdata"  (ngSubmit)="onClickSubmit(formdata.value)">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12>
+             <ion-item>
+             <div class="center">
+              <ion-icon *ngIf="i===0" size="large" name="folder-outline" (click)="presentActionSheet()"></ion-icon>
+              <ion-icon *ngIf="i===1" size="large" name="cloud-upload-outline" (click)="uploadFile()"></ion-icon>
+              <div *ngIf="i===2">
+                <img *ngIf="GetImageNameUpload" formControlName = "img" src="https://vivekdhiman.engineer/api/uploads/{{GetImageNameUpload}}" width="80%">
+              </div>
+              </div>
+             </ion-item>
+            </ion-col>
+          </ion-row>
+         </ion-grid>
+
+        <ion-label position="stacked">Collection</ion-label>
+        <ion-select formControlName = "collection">
+          <ion-select-option  *ngFor="let item of collections">{{item}}</ion-select-option>
+        </ion-select>
+
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input type="text" formControlName = "name"></ion-input>
+
+        <ion-label position="stacked">Price</ion-label>
+      <ion-input type='number'  formControlName = "price"></ion-input>
+
+        <ion-label position="stacked">Brand</ion-label>
+        <ion-select formControlName = "brand">
+          <ion-select-option  *ngFor="let item of brands">{{item}}</ion-select-option>
+        </ion-select>
+
+        <ion-label position="stacked">Description</ion-label>
+      <ion-input type='text'  formControlName = "descs"></ion-input>
+
+      <br/>
+      <br/>
+      <ion-button type="submit" fill="outline" color="success" value="Click here" >Save Changes</ion-button>
+   </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+
+

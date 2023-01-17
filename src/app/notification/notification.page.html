@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-button (click)="goBack()" fill="clear" size="small" class="back_btn">
+        <ion-icon slot="start" name="chevron-back"></ion-icon>
+        Back
+      </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div" style="padding: 10px;">
+
+    <div *ngIf="notifyList === 0">
+      <img style="margin-top: 40%; margin-left: 15%;" src="assets/notify.png">
+      <p style="margin-top: 0%; margin-left: 25%;">You have no notifications!</p>
+    </div>
+
+    <div *ngIf="notifyList != 0">
+    <div *ngIf="i===0">
+      <ion-item>
+        <ion-label>Notifications</ion-label>
+        <ion-badge color="success">{{notifyLength}}</ion-badge>
+      </ion-item>
+  <br>
+
+      <div style="background-color: aquamarine; border: 10px; border-radius: 20px;" class="address_box" *ngFor="let item of notifyList;">
+        <ion-label class="date_lbl">{{item.date}} {{item.time}}</ion-label>
+        <ion-label class="simp_lbl">
+            {{item.msg}}
+        </ion-label>
+    </div>
+
+    </div>
+  </div>
+
+      <div *ngIf="i===1">
+        <form [formGroup]="formdata"  (ngSubmit)="onClickSubmit(formdata.value)">
+
+
+          <ion-label position="stacked">Message</ion-label>
+          <ion-input type="text" placeholder = "Enter the notification" formControlName = "msg"></ion-input>
+
+        <br/>
+        <br/>
+        <ion-button type="submit" fill="outline" color="success" value="Click here" >Save Changes</ion-button>
+     </form>
+      </div>
+
+      <div *ngIf="show">
+        <ion-fab>
+          <ion-fab-button style="margin-left: 19em;" (click)="changeDiv(1)">
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </div>
+
+  </div>
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-button (click)="goToBack()" fill="clear" size="small" class="back_btn">
+          <ion-icon slot="start" name="chevron-back"></ion-icon>
+          Back
+      </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div class="main_content_div">
+      <div class="content_div">
+          <div class="header_flex">
+              <div>
+                  <ion-label class="bold_lbl">{{title}}</ion-label>
+                  <ion-label class="grey_lbl">{{productLen}} Items Found</ion-label>
+              </div>
+              <ion-icon name="ellipsis-horizontal"></ion-icon>
+          </div>
+          <div class="search_div">
+            <ion-icon name="search" ></ion-icon>
+            <ion-input type="text"  [(ngModel)]="filterTerm" placeholder="Search"></ion-input>
+            <ion-icon name="mic"></ion-icon>
+        </div>
+          <ion-row>
+              <ion-col size="6" *ngFor="let item of pname | filter: filterTerm">
+                  <div class="main_col" (click)="goToExploreProducts(item.id)">
+                      <div class="col_back" [style.backgroundImage]="'url(https://vivekdhiman.engineer/api/'+item.img+')'">
+                          <div class="round_div">
+                            <div style="margin-top: 35%; margin-left: 20%; font-size: 10px;">{{item.id}}</div>
+                              <!-- <ion-icon name="heart" (click)="add_wish_items(item.id)"></ion-icon> -->
+                          </div>
+                      </div>
+                      <div class="detail_div">
+                        <!-- <ion-label class="brand_lbl">{{item.name}}</ion-label> -->
+                          <ion-label class="brand_lbl">{{item.names}}</ion-label>
+                          <!-- <ion-label class="name_lbl">{{item.descs}}</ion-label> -->
+                          <ion-label class="price_lbl">₹ {{item.price}}</ion-label>
+                      </div>
+                  </div>
+              </ion-col>
+          </ion-row>
+
+      </div>
+
+  </div>
+</ion-content>

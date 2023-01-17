@@ -1,0 +1,97 @@
+ion-content {
+  --background: #f3f3f3;
+}
+.main_content_div {
+  width: 100%;
+
+  ion-label {
+      display: block;
+  }
+
+  .back_image {
+      width: 100%;
+      height: 300px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .overlay_div {
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0.5);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .icn_flex {
+              display: flex;
+              align-items: center;
+              margin-top: 40px;
+              width: 100%;
+              justify-content: flex-end;
+
+              ion-icon {
+                  margin-right: 16px;
+                  color: white;
+                  font-size: 20px;
+              }
+          }
+
+          .user_back {
+              height: 80px;
+              width: 80px;
+              border-radius: 100%;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              margin-top: 16px;
+          }
+          .name_lbl {
+              font-family: 'semi-bold';
+              color: white;
+              margin-top: 10px;
+          }
+          .white_lbl {
+              color: white;
+              width: 70%;
+              font-size: 14px;
+              text-align: center;
+          }
+      }
+  }
+
+  .content_div {
+      padding: 16px;
+
+      .white_box {
+          background: white;
+          border-radius: 10px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-bottom: 16px;
+
+          .item_div {
+              padding-top: 16px;
+              padding-bottom: 16px;
+              border-bottom: 1px solid #CBCBCB;
+              display: flex;
+              align-items: center;
+              position: relative;
+
+              .first_icn {
+                  font-size: 20px;
+                  color: #CBCBCB;
+              }
+              ion-label {
+                  margin-left: 16px;
+              }
+              .last_icn {
+                  font-size: 20px;
+                  color: #CBCBCB;
+                  position: absolute;
+                  right: 0;
+              }
+          }
+      }
+  }
+}
